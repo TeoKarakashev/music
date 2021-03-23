@@ -1,49 +1,32 @@
-package music.model.binding;
+package music.model.view;
 
-import music.model.entities.ArtistEntity;
 import music.model.entities.enums.Genre;
 
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class AlbumBindingModel {
+public class AlbumViewModel {
 
 
-    private String name;
     private String imageUrl;
+
     private String videoUrl;
+
     private String description;
+
     private Integer copies;
+
     private BigDecimal price;
+
     private LocalDate releaseDate;
+
     private Genre genre;
-    private ArtistEntity artist;
 
-    public AlbumBindingModel() {
-    }
-
-    public ArtistEntity getArtist() {
-        return artist;
-    }
-
-    public void setArtist(ArtistEntity artist) {
-        this.artist = artist;
-    }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public AlbumViewModel() {
     }
 
     public String getImageUrl() {
@@ -92,5 +75,13 @@ public class AlbumBindingModel {
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 }

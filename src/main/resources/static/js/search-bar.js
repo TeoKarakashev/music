@@ -1,7 +1,7 @@
 const albumsList = document.getElementById('albumsList');
 const searchBar = document.getElementById('searchInput');
 const allAlbums = [];
-fetch("http://localhost:8080/albums/api")
+fetch("http://localhost:8000/albums/api")
     .then(response => response.json())
     .then(data => {
         for (let d of data) {

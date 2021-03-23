@@ -10,6 +10,8 @@ import java.time.LocalDate;
 @Table(name = "albums")
 public class AlbumEntity extends BaseEntity {
 
+    @Column
+    private String name;
     @Column(name = "image_url")
     private String imageUrl;
     @Column(name = "video_url")

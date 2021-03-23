@@ -65,7 +65,6 @@ public class UserController {
         if (userService.userExists(userRegisterBindingModel.getUsername())) {
             redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
             redirectAttributes.addFlashAttribute("userExists", true);
-            //TODO check
             return "redirect:/users/register";
         }
 

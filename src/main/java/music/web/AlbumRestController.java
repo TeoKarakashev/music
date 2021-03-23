@@ -1,6 +1,6 @@
 package music.web;
 
-import music.model.binding.AlbumBindingModel;
+import music.model.view.AlbumViewModel;
 import music.repository.AlbumRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController
+//@RestController
 @RequestMapping("/albums")
 public class AlbumRestController {
 
@@ -23,10 +23,10 @@ public class AlbumRestController {
     }
 
     @GetMapping("/api")
-    public List<AlbumBindingModel> findAll(){
+    public List<AlbumViewModel> findAll() {
 
         this.albumRepository.findAll().stream()
-                .map(artistEntity -> modelMapper.map(artistEntity, AlbumBindingModel.class)).collect(Collectors.toList());
+                .map(artistEntity -> modelMapper.map(artistEntity, AlbumViewModel.class)).collect(Collectors.toList());
         throw new UnsupportedOperationException("TODO");
     }
 }
